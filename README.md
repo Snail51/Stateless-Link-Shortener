@@ -5,7 +5,7 @@
  - This link shortening service is entirely stateless; all data about the target link is stored in URI parameters in the URL. Upon visiting this link, the server decodes the data in the URI parameters to produce a link, and then redirects the user to that link.
 
 # Installation
- - The contents of this repo can run on any webserver that supports JavaScript and server-side PHP execution.
+ - The contents of this repo can run on any webserver that supports JavaScript, server-side PHP execution, and Node.JS version 16.0.0 or later.
  - **There is already a version available at:** https://tools.snailien.net/LinkShortener
 
 # Usage
