@@ -54,7 +54,7 @@ class Decompressor
 
         if(data == "" || data == null)
         {
-            data = "Couldn't decode the provided link.\nAre you sure it was made by the RTN?";
+            data = "Couldn't decode the provided link.\nCould not parse Data parameter.";
         }
 
         return data;
@@ -208,7 +208,7 @@ class Compressor
 
         if(data == "" || data == null)
         {
-            data = "Couldn't decode the provided link.\nAre you sure it was made by the RTN?";
+            data = "Couldn't decode the provided link.\nCould not parse Data parameter.";
         }
 
         return data;
