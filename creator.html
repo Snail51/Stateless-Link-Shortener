@@ -28,8 +28,7 @@
         <meta name="twitter:image" content="./link.svg">
 
         <!-- Ensure compression libraries are available at global scope -->
-        <script src="./lib/lzma-min.js"></script>
-        <script src="./lib/pako-min.js"></script>
+        <script src="./uriCompressor-min.js"></script>
     </head>
     <body>
         <div style="display: flex; flex-direction: column;">
@@ -61,16 +60,13 @@
 
         
 
-        <script type="module">
+        <script defer>
             window.redirectBaseURL = "https://tools.snailien.net/LinkShortener/unpack.php";
-
-            import { Compressor } from "./compressor.js";
-            var c = new Compressor();
-            window.main = c;
 
             document.getElementById('input').addEventListener('input', function() 
             {
-                document.getElementById('output').value = window.redirectBaseURL + window.main.push(document.getElementById('input').value);
+                var res = window.URICompressor.smartPush(document.getElementById('input').value);
+                document.getElementById('output').value = window.redirectBaseURL + `?enc=${res.encoding}&cmpr=${res.compression}&data=${res.data}`;
                 document.getElementById('inputLength').value = document.getElementById('input').value.length;
                 document.getElementById('outputLength').value = document.getElementById('output').value.length;
             });
